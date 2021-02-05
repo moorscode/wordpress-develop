@@ -4308,7 +4308,7 @@ function esc_sql( $data ) {
 function esc_url( $url, $protocols = null, $_context = 'display' ) {
 	$original_url = $url;
 
-	if ( '' === $url ) {
+	if ( '' === $url || "string" !== gettype( $url ) ) {
 		return $url;
 	}
 
